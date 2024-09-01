@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1><title>Pinterest</title></h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo img {
+            height: 40px;
+        }
+        .navbar .search-bar input {
+            width: 400px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .menu img {
+            margin-left: 20px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            filter: grayscale(100%); /* Grey color for icons */
+            transition: filter 0.3s ease;
+        }
+        .navbar .menu img:hover {
+            filter: grayscale(0%); /* Color on hover */
+        }
+        /* Staggered Grid Layout */
+        .pin-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pin {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .pin img {
+            width: 100%;
+            height: auto;
+            transition: box-shadow 0.3s ease;
+        }
+        .pin .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 12px;
+        }
+        .pin:hover {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+        .pin img:hover {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+        }
+        /* Staggered Effect */
+        .pin:nth-child(1) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: 10px;
+        }
+        .pin:nth-child(2) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: -15px; /* Shift up */
+        }
+        .pin:nth-child(3) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: 15px; /* Shift down */
+        }
+        .pin:nth-child(4) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: -10px; /* Shift up */
+        }
+        .pin:nth-child(5) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: 10px; /* Shift down */
+        }
+        .pin:nth-child(6) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: -5px; /* Shift up */
+        }
+        .pin:nth-child(7) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: 5px; /* Shift down */
+        }
+        .pin:nth-child(8) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: -10px; /* Shift up */
+        }
+        .pin:nth-child(9) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: 10px; /* Shift down */
+        }
+        .pin:nth-child(10) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: -15px; /* Shift up */
+        }
+        .pin:nth-child(11) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: 15px; /* Shift down */
+        }
+        .pin:nth-child(12) {
+            grid-row: span 1;
+            grid-column: span 1;
+            margin-top: -10px; /* Shift up */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="menu">
+            <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home" title="Home">
+            <img src="https://img.icons8.com/ios-filled/50/000000/add-user-group-man-man.png" alt="Following" title="Following">
+            <img src="https://img.icons8.com/ios-filled/50/000000/user-male-circle.png" alt="Profile" title="Profile">
+        </div>
+    </div>
+
+    <!-- Pin Container -->
+    <div class="pin-container">
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/a4/98/65/a49865cde59ff602f0ede015719e8c73.jpg" alt="Pin Image 1">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/6d/eb/84/6deb8453f651a0a5d9f7ecf9e7374e74.jpg" alt="Pin Image 2">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/43/4a/83/434a8356235ea1da79e8a685b8a86d41.jpg" alt="Pin Image 3">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/de/84/71/de8471741323fffc4b537184e79ac0c3.jpg" alt="Pin Image 4">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/f2/53/4b/f2534b5af1e5c4b03fc95b10c9816527.jpg" alt="Pin Image 5">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/474x/24/0e/ef/240eefad4fd60b3692caaa8fe6589666.jpg" alt="Pin Image 6">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/c8/11/87/c81187e092a7a66b289037f6462b1e61.jpg" alt="Pin Image 7">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/ee/cc/fd/eeccfdf206c0354c2407b50f85d304a4.jpg" alt="Pin Image 8">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/27/0d/32/270d3262153cd0ac6043642cba575d98.jpg" alt="Pin Image 9">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/b8/50/f5/b850f5eafd32209acc182cf488b5c47f.jpg" alt="Pin Image 10">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/c3/2b/97/c32b97d60009fd7bf6f5f4635523204a.jpg" alt="Pin Image 11">
+            
+        </div>
+        <div class="pin">
+            <img src="https://i.pinimg.com/236x/ab/b8/7d/abb87ddca30bb436668cebd7ecc0d6b8.jpg" alt="Pin Image 12">
+            
+        </div>
+    </div>
+    <br>
+    <br>
+    Made by Noor-Us-Sahar
+    <br>
+    Roll No:641
+    <br>
+    Age:13
+    <br>
+    Class:8
+    <br>
+    
+
+</body>
+</html>
